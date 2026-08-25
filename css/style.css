@@ -1,0 +1,616 @@
+/* ============================================
+   الأنماط العامة
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ============================================
+   صفحة اختيار البوابات
+   ============================================ */
+.portal-selection {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.portal-selection .container {
+    max-width: 1000px;
+    width: 100%;
+}
+
+.logo-section {
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.logo-section .logo {
+    font-size: 80px;
+    margin-bottom: 20px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.logo-section h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.logo-section p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.portals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.portal-card {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.portal-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.portal-card.professionals {
+    border-top: 5px solid #1E3A8A;
+}
+
+.portal-card.clients {
+    border-top: 5px solid #D97706;
+}
+
+.card-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.portal-card h2 {
+    font-size: 22px;
+    color: #1F2937;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.portal-card p {
+    color: #6B7280;
+    font-size: 14px;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.features-list {
+    list-style: none;
+    margin-bottom: 30px;
+    text-align: right;
+}
+
+.features-list li {
+    color: #374151;
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+.portal-btn {
+    display: inline-block;
+    padding: 12px 40px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.professionals .portal-btn {
+    background: linear-gradient(135deg, #1E3A8A 0%, #1e40af 100%);
+    color: white;
+}
+
+.professionals .portal-btn:hover {
+    box-shadow: 0 8px 20px rgba(30, 58, 138, 0.3);
+    transform: scale(1.05);
+}
+
+.clients .portal-btn {
+    background: linear-gradient(135deg, #D97706 0%, #ea580c 100%);
+    color: white;
+}
+
+.clients .portal-btn:hover {
+    box-shadow: 0 8px 20px rgba(217, 119, 6, 0.3);
+    transform: scale(1.05);
+}
+
+/* ============================================
+   صفحات تسجيل الدخول
+   ============================================ */
+body.login-page {
+    background: linear-gradient(135deg, #1E3A8A 0%, #1e40af 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+body.login-page.clients-login {
+    background: linear-gradient(135deg, #D97706 0%, #ea580c 100%);
+}
+
+.login-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    display: flex;
+    width: 100%;
+    max-width: 900px;
+    overflow: hidden;
+}
+
+.info-section {
+    color: white;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+}
+
+.professionals-login .info-section {
+    background: linear-gradient(135deg, #1E3A8A 0%, #1e40af 100%);
+}
+
+.clients-login .info-section {
+    background: linear-gradient(135deg, #D97706 0%, #ea580c 100%);
+}
+
+.logo-header {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.info-section p {
+    font-size: 14px;
+    line-height: 1.8;
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+
+.user-types,
+.features {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.user-type,
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.user-type::before,
+.feature::before {
+    content: "✓";
+    font-weight: bold;
+    font-size: 18px;
+    color: #D97706;
+}
+
+.clients-login .user-type::before,
+.clients-login .feature::before {
+    color: #FFFFFF;
+}
+
+/* ============================================
+   قسم نموذج تسجيل الدخول
+   ============================================ */
+.login-section {
+    padding: 60px 40px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-section h3 {
+    font-size: 22px;
+    color: #1F2937;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.login-section > p {
+    color: #6B7280;
+    margin-bottom: 30px;
+    font-size: 13px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #374151;
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.phone-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #374151;
+    font-size: 14px;
+}
+
+.phone-input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.phone-input-group select,
+.phone-input-group input {
+    padding: 12px 15px;
+    border: 1px solid #E5E7EB;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+.phone-input-group select {
+    width: 30%;
+    cursor: pointer;
+    background-color: #F9FAFB;
+}
+
+.professionals-login .phone-input-group select:focus {
+    outline: none;
+    border-color: #1E3A8A;
+}
+
+.clients-login .phone-input-group select:focus {
+    outline: none;
+    border-color: #D97706;
+}
+
+.phone-input-group input {
+    width: 70%;
+    background-color: #F9FAFB;
+}
+
+.professionals-login .phone-input-group input:focus {
+    outline: none;
+    border-color: #1E3A8A;
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+.clients-login .phone-input-group input:focus {
+    outline: none;
+    border-color: #D97706;
+    box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
+}
+
+.password-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #E5E7EB;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #F9FAFB;
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+.professionals-login .password-input:focus {
+    outline: none;
+    border-color: #1E3A8A;
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+.clients-login .password-input:focus {
+    outline: none;
+    border-color: #D97706;
+    box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 13px;
+}
+
+.remember-forgot label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 0;
+}
+
+.remember-forgot input[type="checkbox"] {
+    cursor: pointer;
+    margin-left: 5px;
+    width: 16px;
+    height: 16px;
+}
+
+.remember-forgot a {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.professionals-login .remember-forgot a {
+    color: #1E3A8A;
+}
+
+.professionals-login .remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.clients-login .remember-forgot a {
+    color: #D97706;
+}
+
+.clients-login .remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.professionals-login .login-btn {
+    background: linear-gradient(135deg, #1E3A8A 0%, #1e40af 100%);
+    color: white;
+}
+
+.professionals-login .login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(30, 58, 138, 0.3);
+}
+
+.clients-login .login-btn {
+    background: linear-gradient(135deg, #D97706 0%, #ea580c 100%);
+    color: white;
+}
+
+.clients-login .login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(217, 119, 6, 0.3);
+}
+
+.divider {
+    text-align: center;
+    margin: 25px 0;
+    color: #D1D5DB;
+    font-size: 13px;
+    position: relative;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background: #E5E7EB;
+}
+
+.divider::before {
+    right: 0;
+}
+
+.divider::after {
+    left: 0;
+}
+
+.social-login {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.social-btn {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #E5E7EB;
+    background: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.social-btn.facebook {
+    color: #1877F2;
+    border-color: #1877F2;
+}
+
+.social-btn.facebook:hover {
+    background: #F0F8FF;
+}
+
+.social-btn.gmail {
+    color: #EA4335;
+    border-color: #EA4335;
+}
+
+.social-btn.gmail:hover {
+    background: #FFF0F0;
+}
+
+.signup-link {
+    text-align: center;
+    color: #6B7280;
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+.signup-link a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.professionals-login .signup-link a {
+    color: #1E3A8A;
+}
+
+.professionals-login .signup-link a:hover {
+    text-decoration: underline;
+}
+
+.clients-login .signup-link a {
+    color: #D97706;
+}
+
+.clients-login .signup-link a:hover {
+    text-decoration: underline;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    margin-bottom: 30px;
+    transition: opacity 0.3s;
+}
+
+.back-btn:hover {
+    opacity: 0.8;
+}
+
+/* ============================================
+   التجاوب مع الشاشات الصغيرة
+   ============================================ */
+@media (max-width: 768px) {
+    .portals-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .login-container {
+        flex-direction: column;
+    }
+
+    .info-section,
+    .login-section {
+        width: 100%;
+        padding: 40px 20px;
+    }
+
+    .info-section {
+        padding-bottom: 30px;
+    }
+
+    .logo-section h1 {
+        font-size: 32px;
+    }
+
+    .phone-input-group {
+        flex-direction: column;
+    }
+
+    .phone-input-group select,
+    .phone-input-group input {
+        width: 100% !important;
+    }
+
+    .login-section {
+        padding: 40px 20px;
+    }
+
+    .login-section h3 {
+        font-size: 18px;
+    }
+
+    .remember-forgot {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-section .logo {
+        font-size: 60px;
+    }
+
+    .logo-section h1 {
+        font-size: 24px;
+    }
+
+    .portal-card {
+        padding: 30px 20px;
+    }
+
+    .portal-card h2 {
+        font-size: 18px;
+    }
+}
