@@ -1,0 +1,188 @@
+/* ============================================
+   أنماط إضافية لصفحات تسجيل الدخول
+   ============================================ */
+
+/* تحسينات الاستجابة للعناصر */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+select,
+textarea {
+    font-size: 16px; /* منع التكبير التلقائي على iOS */
+}
+
+/* تحسينات النماذج */
+form {
+    width: 100%;
+}
+
+/* تحسينات الأزرار */
+button {
+    font-family: inherit;
+}
+
+/* تحسينات التركيز */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+/* تحسينات حالة التحرير */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    box-shadow: 0 0 0 30px white inset !important;
+}
+
+/* تحسين الرمز في الأزرار */
+.social-btn {
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* تحسينات صورة الخلفية */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* وضع العرض الداكن */
+@media (prefers-color-scheme: dark) {
+    body.login-page {
+        background: linear-gradient(135deg, #1a2a4a 0%, #141e36 100%);
+    }
+
+    body.login-page.clients-login {
+        background: linear-gradient(135deg, #4a3520 0%, #362818 100%);
+    }
+
+    .login-container {
+        background: #1f2937;
+    }
+
+    .login-section h3 {
+        color: #f3f4f6;
+    }
+
+    .login-section > p {
+        color: #d1d5db;
+    }
+
+    .form-group label {
+        color: #e5e7eb;
+    }
+
+    .phone-input-group select,
+    .phone-input-group input,
+    .password-input {
+        background-color: #111827;
+        color: #f3f4f6;
+        border-color: #374151;
+    }
+
+    .phone-input-group select:focus,
+    .phone-input-group input:focus,
+    .password-input:focus {
+        border-color: #9ca3af;
+    }
+
+    .remember-forgot {
+        color: #d1d5db;
+    }
+
+    .social-btn {
+        background: #111827;
+        border-color: #374151;
+        color: #9ca3af;
+    }
+
+    .social-btn:hover {
+        background: #1f2937;
+        border-color: #4b5563;
+    }
+
+    .divider {
+        color: #4b5563;
+    }
+
+    .divider::before,
+    .divider::after {
+        background: #374151;
+    }
+
+    .signup-link {
+        color: #d1d5db;
+    }
+}
+
+/* دعم اتجاه RTL */
+[dir="rtl"] .remember-forgot {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .phone-input-group input {
+    text-align: right;
+    direction: ltr;
+}
+
+[dir="rtl"] input[type="tel"]::placeholder {
+    text-align: right;
+}
+
+/* تحسينات التطبيق على الأجهزة المحمولة */
+@media (max-height: 600px) {
+    .info-section {
+        padding: 40px 30px;
+    }
+
+    .login-section {
+        padding: 40px 30px;
+    }
+
+    .logo-header {
+        font-size: 24px;
+    }
+
+    .info-section h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .info-section p {
+        font-size: 12px;
+    }
+
+    .user-types,
+    .features {
+        gap: 10px;
+    }
+
+    .user-type,
+    .feature {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
+
+/* تحسينات الطباعة */
+@media print {
+    body {
+        background: white;
+    }
+
+    .login-container {
+        box-shadow: none;
+        border: 1px solid #e5e7eb;
+    }
+
+    button,
+    .social-btn {
+        display: none;
+    }
+}
