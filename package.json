@@ -1,0 +1,32 @@
+{
+  "name": "lawfirm-app",
+  "version": "1.0.0",
+  "description": "تطبيق المحاماة الموحد - Unified Law Firm Application",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "npm start",
+    "build": "echo 'Build completed'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "lawfirm",
+    "محاماة",
+    "legal",
+    "portal",
+    "login"
+  ],
+  "author": "Wesam ElShenawey",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
