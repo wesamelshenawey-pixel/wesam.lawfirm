@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة تسجيل الدخول - الموكلين والعملاء</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body class="login-page clients-login">
+    <div class="login-container">
+        <!-- القسم الأيسر - المعلومات -->
+        <div class="info-section">
+            <a href="../index.html" class="back-btn">← العودة</a>
+            
+            <div class="logo-header">📋 تطبيق المحاماة الموحد</div>
+            <h2>مرحباً بك</h2>
+            <p>بوابة الدخول الخاصة بالموكلين والعملاء</p>
+            
+            <div class="features">
+                <div class="feature">تتبع قضاياك القانونية</div>
+                <div class="feature">التواصل المباشر مع المحامي</div>
+                <div class="feature">الوثائق والمستندات آمنة</div>
+            </div>
+        </div>
+
+        <!-- القسم الأيمن - نموذج التسجيل -->
+        <div class="login-section">
+            <h3>تسجيل الدخول</h3>
+            <p>أدخل بيانات دخولك للوصول إلى قضاياك</p>
+
+            <form id="clientLoginForm">
+                <!-- رقم الهاتف -->
+                <label class="phone-label">رقم الهاتف</label>
+                <div class="phone-input-group">
+                    <select id="countryCode" required>
+                        <option value="">اختر الدولة</option>
+                        <option value="+966">🇸🇦 السعودية +966</option>
+                        <option value="+971">🇦🇪 الإمارات +971</option>
+                        <option value="+20">🇪🇬 مصر +20</option>
+                        <option value="+965">🇰🇼 الكويت +965</option>
+                        <option value="+974">🇶🇦 قطر +974</option>
+                        <option value="+973">🇧🇭 البحرين +973</option>
+                        <option value="+968">🇴🇲 عمان +968</option>
+                        <option value="+962">🇯🇴 الأردن +962</option>
+                        <option value="+212">🇲🇦 المغرب +212</option>
+                        <option value="+216">🇹🇳 تونس +216</option>
+                    </select>
+                    <input type="tel" id="phoneNumber" placeholder="أدخل رقم الهاتف" required>
+                </div>
+
+                <!-- كلمة المرور -->
+                <div class="form-group">
+                    <label for="password">كلمة المرور</label>
+                    <input type="password" id="password" class="password-input" placeholder="أدخل كلمة المرور" required>
+                </div>
+
+                <!-- تذكر البيانات و نسيت كلمة المرور -->
+                <div class="remember-forgot">
+                    <label>
+                        <input type="checkbox" id="rememberMe">
+                        <span>تذكر بيانات الدخول</span>
+                    </label>
+                    <a href="#forgot-password">هل نسيت كلمة المرور؟</a>
+                </div>
+
+                <!-- زر تسجيل الدخول -->
+                <button type="submit" class="login-btn">تسجيل الدخول</button>
+
+                <!-- الفاصل -->
+                <div class="divider">أو</div>
+
+                <!-- تسجيل الدخول عبر وسائل التواصل -->
+                <div class="social-login">
+                    <a href="#" class="social-btn facebook" id="fbLogin">
+                        <span style="font-weight: bold;">f</span> Facebook
+                    </a>
+                    <a href="#" class="social-btn gmail" id="gmailLogin">
+                        <span style="font-weight: bold;">G</span> Gmail
+                    </a>
+                </div>
+
+                <!-- رابط إنشاء حساب -->
+                <div class="signup-link">
+                    ليس لديك حساب؟ <a href="#register">اضغط هنا للتسجيل</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/login.js"></script>
+</body>
+</html>
