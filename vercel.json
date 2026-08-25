@@ -1,0 +1,55 @@
+{
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "other",
+  "outputDirectory": "./public",
+  "public": true,
+  "env": [
+    {
+      "key": "NEXT_PUBLIC_API_URL",
+      "value": "https://api.lawfirm.app"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://api.lawfirm.app/api/:path*"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/professionals",
+      "destination": "/pages/professionals-login.html",
+      "permanent": false
+    },
+    {
+      "source": "/clients",
+      "destination": "/pages/clients-login.html",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ]
+}
